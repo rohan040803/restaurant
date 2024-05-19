@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BURGER ZONE</title>
+    <link rel="icon" href="restaurant-logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{padding: 0px;}
+        .main {
+            width: 99vw;
+            background-image: url(burger.jpeg);
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+        }
+        .icon {
+            width: 150px;
+            height: 75px;
+            margin: auto;
+            float: left;
+
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            padding-left: 30px;
+            padding-top: 25px;
+            position: fixed;
+            z-index: 2;
+        }
+        .navbar {
+            width: 100%;
+            height: 65px;
+            margin: auto;
+            background-color: white;
+            position: fixed;
+            z-index: 1;
+        }
+        ul {
+            float: right;
+            display: flex;
+            padding-left: 90px;
+            margin-right: 20px;
+        }
+        ul li {
+            list-style: none;
+            margin-left: 62px;
+            margin-top: 27px;
+            font-size: 18px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            transition: 0.4s ease-in-out;
+            padding: 10px;
+            border-radius: 50px;
+        }
+        ul li a:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .content {
+            width: 1200px;
+            height: auto;
+            margin: auto;
+            color: white;
+            position: relative;
+            padding-top: 40px;
+            cursor: default;
+        }
+        .content h4 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            padding-left: 20px;
+            margin-top: 9%;
+            letter-spacing: 2px;
+            color: black;
+
+        }
+        .content h5 {
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 1%;
+            margin-bottom: 1%;
+            font-size: 20px;
+            padding-left: 20px;
+            color: black;
+        }
+        .content .cn {
+            background-image: url(swiggy.jpg);
+            background-size: cover;
+            width: 150px;
+            height: 40px;
+            border: none;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 1s;
+            display: grid;
+        }
+        .box{width:100%;overflow-X:hidden;}
+        .content .cn1 {
+            background-image: url(zomato.jpg);
+            background-size: cover;
+            width: 150px;
+            height: 40px;
+            border: none;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .cn:hover {
+            transform: scale(1.2);
+            z-index: 2;
+        }
+        .cn1:hover {
+            transform: scale(1.2);
+            z-index: 2;
+        }
+        .content h1 {
+            color: white;
+            font-size: 100px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bolder;
+            padding-left: 20px;
+        }
+        .more {
+            width: 99vw;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .explore {
+            width: 30%;
+            height: 40%;
+            background-color: orange;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .explore a {
+            text-decoration: none;
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+        .explore:hover {
+            transform: scale(1.2);
+            z-index: 2;
+        }
+        .box2 {
+            width: 100%;
+            height: 10vh;
+        }
+        .title {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0 0 70px 60px;
+            text-decoration: underline;
+        }
+        .deals {
+            width: 99vw;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+        }
+        .deals img {
+            width: 90%;
+            cursor: pointer;
+            margin: 0 0 10px 20px;
+            transition: 1s;
+        }
+        .deals img:hover {
+            transform: scale(1.2);
+            z-index: 2;
+        }
+        .title2 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 40px 0 40px 60px;
+            text-decoration: underline;
+        }
+        .menu {
+            display: flex;
+        }
+        .description {
+            width: 250px;
+            height: 230px;
+            margin: 5px;
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 1px 1px 5px black;
+        }
+        .description img {
+            width: 230px;
+            height: 200px;
+            object-fit: contain;
+        }
+        h6 {
+            display: flex;
+            justify-content: center;
+            font-size: large;
+        }
+        .best {
+            width: 99vw;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+        }
+        .best2 {
+            width: 98%;
+            height: fit-content;
+            display: flex;
+            margin-left: 30px;
+            justify-content: left;
+        }
+        .sellers {
+            display: flex;
+            width: 420px;
+            height: 180px;
+            margin: 30px;
+            border-radius: 5px;
+            position: relative;
+            border: 1px solid orange;
+            background-color: orange;
+        }
+        .image {
+            width: 35%;
+            height: 100%;
+            border-radius: 25px 0 0 25px;
+        }
+        .image img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .ttl {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 25px;
+            font-weight: bolder;
+            margin: 20px;
+            height: fit-content;
+            display: grid;
+        }
+        .ttlcn {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: small;
+            font-weight: 100;
+            margin-top: 10px;
+            color: whitesmoke;
+        }
+        .price {
+            margin-top: 20px;
+            display: flex;
+        }
+        .add {
+            margin-left: 90px;
+            border: 1px solid black;
+            width: 70px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .add a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .end {
+            width: 99vw;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        .foot {
+            width: 100%;
+            height: 75%;
+            background-image: url(mail.jpeg);
+            background-size: cover;
+        }
+        .quote {
+            display: flex;
+            justify-content: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-top: 70px;
+            color: white;
+        }
+        .quote2 {
+            display: flex;
+            justify-content: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin-bottom: 50px;
+            color: white;
+        }
+        .mail {
+            display: flex;
+            justify-content: center;
+        }
+        input[type=text] {
+            padding: 10px;
+            width: 400px;
+            height: 30px;
+        }
+        .bn {
+            width: 120px;
+            font-size: large;
+            background-color: gray;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+        ul .fa-bars{
+            display: none;
+        }
+        @media only screen and (max-width: 600px){
+            .main{
+                background-image: url(berger.jpg);
+                width: 100vw;
+                height: 60vh;
+            }
+            .icon{
+                display: none;
+            }
+            .navbar{
+                width: 100vw;
+                background-color: white;
+                height: 60%;
+                position: relative;
+                max-height: 70px;
+                overflow: hidden;
+                transition: max-height 0.5s;
+            }
+            ul {
+            float: left;
+            display: grid;
+            padding-left: 1px;
+            margin-right: 10px;
+            }
+
+            ul li{
+                font-size: 17px;
+                margin-left: 20px;
+            } 
+            ul li a {
+            color: black;
+            padding: 1px;
+            }
+            ul .fa-bars{
+            display: block;
+            font-size: 20px;
+        }
+        .hidemenu{
+            max-height: 300px;
+        }
+        .content {
+            display: none;
+        }
+        .title2 {
+            margin: 20px 0 20px 20px;
+        }
+        .menu{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+        .description {
+            width: 150px;
+            height: 150px;
+        }
+        .description img {
+            width: 150px;
+            height: 100px;
+        }
+
+        .explore {
+            width: 70%;
+        }
+        .explore a {
+            font-size: large;
+        }
+        .title{
+            margin: 20px 0 20px 20px;
+        }
+        .best{
+            display: grid;
+        }
+        .best2{
+            display: none;
+        }
+        .sellers {
+            display: flex;
+            width: 300px;
+            height: 200px;
+        }
+        .ttl{
+            font-size: 20px;
+            width: 50px;
+        }
+        .add{
+            margin-left: 40px;
+        }
+        .foot {
+            width: 100%;
+            height: 40%;
+        }
+        .quote {
+            font-size: large;
+        }
+        .quote2 {
+            font-size: large
+        }
+        .end {
+            height: 60vh;
+        }
+        }
+        
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="box">
+    <div class="main">
+        <div class="icon">
+            <img class="logo" src="restaurant-logo.png" alt="logo">
+        </div>
+        <div id="nvbar" class="navbar">
+            <ul>
+                <li><i class="fa-solid fa-bars" onclick="togglebtn()"></i></li>
+                <li><i class="fa-solid fa-store"></i><a href="#">NEARBY STORES</a></li>
+                <li><i class="fa-solid fa-percent"></i><a href="#">OFFERS</a></li>
+                <li><i class="fa-solid fa-user"></i><a href="#">LOGIN</a></li>
+                <li><i class="fa-solid fa-cart-shopping"></i><a href="#">CART</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h4>The one and only</h4>
+            <h1>FRESH <br> TASTY <br> BURGER </h1>
+            <h5>Order Now On</h5>
+            <button class="cn"></button>
+            <button class="cn1"></button>
+        </div>
+    </div>
+    <div class="box3">
+        <h1 class="title2">OUR MENU</h1>
+    </div>
+    <div class="menu">
+        <div class="description"><img src="menu1.jpeg" alt="">
+            <h6>Burgers</h6>
+        </div>
+        <div class="description"><img src="menu2.jpeg" alt="">
+            <h6>Wraps</h6>
+        </div>
+        <div class="description"><img src="menu3.jpeg" alt="">
+            <h6>Chicken Wings & Nuggets</h6>
+        </div>
+        <div class="description"><img src="menu4.jpeg" alt="">
+            <h6>Desserts</h6>
+        </div>
+        <div class="description"><img src="menu5.jpeg" alt="">
+            <h6>Cafe</h6>
+        </div>
+        <div class="description"><img src="menu6.jpeg" alt="">
+            <h6>Sides & Baverages</h6>
+        </div>
+    </div>
+    <div class="more">
+        <div class="explore"><a href="#">Explore Full Menu</a></div>
+    </div>
+    <div class="box2">
+        <h1 class="title">TOP DEALS</h1>
+    </div>
+    <div class="deals">
+        <img src="deals.jpeg" alt="">
+        <img src="deal2.jpeg" alt="">
+        <img src="deal3.jpeg" alt="">
+        <img src="deal4.jpeg" alt="">
+    </div>
+    <div class="box5">
+        <h1 class="title2">BEST SELLERS</h1>
+    </div>
+    <div class="best">
+        <div class="sellers">
+            <div class="image"><img src="best1.jpeg" alt=""></div>
+            <div class="ttl">CHICKEN<br>Whopper<div class="ttlcn">Our signature Whopper with<br>7 layers between the
+                    buns.</div>
+                <div class="price">₹249
+                    <button class="add"><a href="#">ADD+</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="sellers">
+            <div class="image"><img src="best2.jpeg" alt=""></div>
+            <div class="ttl"> FIERY CHICKEN<br>BURGER<div class="ttlcn">Spicy Fried Chicken, loads of<br>sauces in soft
+                    masala.</div>
+                <div class="price">₹199
+                    <button class="add"><a href="#">ADD+</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="sellers">
+            <div class="image"><img src="best3.jpeg" alt=""></div>
+            <div class="ttl">VEG<br>Whopper<div class="ttlcn">Our signature Whopper with<br>7 layers between the buns.
+                </div>
+                <div class="price">₹179
+                    <button class="add"><a href="#">ADD+</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="best2">
+        <div class="sellers">
+            <div class="image"><img src="best4.jpeg" alt=""></div>
+            <div class="ttl">PANEER ROYALE<br>BURGER<div class="ttlcn">Thick Paneer Patty, loads of<br>sauces in soft
+                    masala.</div>
+                <div class="price">₹189
+                    <button class="add"><a href="#">ADD+</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="sellers">
+            <div class="image"><img src="best5.jpeg" alt=""></div>
+            <div class="ttl">BZ VEGGIE<br>BURGER<div class="ttlcn">Our tribute to classic<br>american taste.</div>
+                <div class="price">₹139
+                    <button class="add"><a href="#">ADD+</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <div class="foot">
+            <div class="quote">Join Us To Get An Amazing Discount</div>
+            <div class="quote2">On Your Next Order</div>
+            <div class="mail">
+                <input type="text" placeholder="Your Email Here"><button class="bn">SUBMIT</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        var nvbar = document.getElementById("nvbar")
+
+        function togglebtn(){
+            nvbar.classList.toggle("hidemenu");
+        }
+    </script>
+</body>
+</html>
